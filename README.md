@@ -32,9 +32,9 @@ The phrase MERN stack comprises the following technologies that allow for faster
 - mongoose: Is used to connect and interact with MongoDB
 
 Now, we’ll add [nodemon](https://nodemon.io/) as a dev dependency. 
-`
+```
 npm i -D nodemon
-`
+```
  To use nodemon, add "app": "nodemon app.js" to your scripts tag under the package.json file.
  nodemon is a utility that will monitor any changes in your source . The app.js is the entry point for the application. It is also important to define a start script here with "start": "node app.js".
   
@@ -42,21 +42,21 @@ npm i -D nodemon
  Now, create a file named app.js for our entry point. You can create this from the terminal with the $ touch app.js command.
   
 
-`
+```
   // app.js
 const express = require('express');
 const app = express();
 app.get('/', (req, res) => res.send('Hello world!'));
  const port = process.env.PORT || 8082;
 app.listen(port, () => console.log(Server running "));
-`
+```
 
  After that, run the $ node app command. You will see Server running on port 8082. You can also check it from the browser by opening the browser and entering http://localhost:8082.
  At this point, if we change anything, we’ll need to restart the server manually. But, if we set up nodemon, then we don’t have to restart it every time. nodemon will watch if there is any change and restart the server automatically.
   
  So, what you need to do for that is a little change to the scripts in our package.json file. See below:
   
-  `
+  ```
   // package.json
   {
   "name": "mern\_a\_to\_z",
@@ -80,14 +80,14 @@ app.listen(port, () => console.log(Server running "));
   "nodemon": "^3.0.2"
   }
   } 
-  `
+  ```
   
  Now, you can run your project using the $ npm runapp command. If you get any error at this point, run the commands below:
  
-  `
+  ```
  $ npm install
  $ npm run app
- `
+ ```
   # Database setup with MongoDB
   
 - MongoDB provides a multi-cloud database service known as Atlas, which simplifies the process of deploying and managing MongoDB databases. We will use Atlas to create the database for our MERN application.
@@ -104,12 +104,12 @@ Optimizing the database performance is essential, especially when scaling your a
 - Now that we have a database set up, we can go ahead and connect it to our project.
 - Inside the project folder, create another folder named config, and add a db.js
 
-  `
+```
 // db.js
+
  const mongoose = require("mongoose");
  const db =
 "mongodb+srv://logrocket:<password>@cluster1.dydb2rf.mongodb.net/?retryWrites=t rue&w=majority";
- /\* Replace <password> with your database password \*/
 mongoose.set("strictQuery", true, "useNewUrlParser", true);
 const connectDB = async () => {
  try {
@@ -121,22 +121,23 @@ const connectDB = async () => {
  }
  };
   module.exports = connectDB;
-  `
+```
  You must replace the string in the code above with the one you copied from your database in the previous section, as well as the placeholder with the user password you copied from the dashboard.
  We need a little change in our app.js file to connect to the database. Update your app.js
-`
+
+```
   // app.js
  const express = require('express');
  const connectDB = require('./config/db');
  const app = express();
-`
-`
+```
+```
 // Connect Database
 connectDB();
 app.get('/', (req, res) => res.send('Hello world!'));
 const port = process.env.PORT || 8082;
 app.listen(port, () => console.log(`Server running on port ${port}`));
-`
+```
 - Now, you can run the project using the $ npm run app command.
 - Great! So far, we are on the right track, and our database is successfully connected. Now, time to complete the route setup.
 - 
