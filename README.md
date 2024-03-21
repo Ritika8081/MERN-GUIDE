@@ -7,19 +7,21 @@ The phrase MERN stack comprises the following technologies that allow for faster
 - [React](https://reactjs.org/): JavaScript library for building user interfaces
 - [Node.js](https://nodejs.org/en/): An open source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser
   
-- MongoDB, Express.js, and Node.js help you build the backend of an application, while React powers the frontend. Node.js and React rank as the two most popular web frameworks and technologies, according to the most recent [Stack Overflow developer survey](https://survey.stackoverflow.co/2023/). And MongoDB is also one of the [most popular database](https://survey.stackoverflow.co/2022/#most-popular-technologies-database)s for developers. About [21 million websites use React](https://trends.builtwith.com/websitelist/React/Historical) to power their frontend. These statistics should give you a clear idea of how stable and popular these technologies are.
+- MongoDB, Express.js, and Node.js help you build the backend of an application, while React powers the frontend. 
   
-- Learning the MERN stack will help you become a full-stack developer, which is in high demand. However, it takes time to become a good MERN stack developer.
-- So, before learning technologies like React or Node.js, it is important to ensure that your fundamentals are strong. Many developers fail to be good MERN stack developers because they lack the [fundamental knowledge of JavaScript](https://blog.logrocket.com/javascript-concepts-before-learning-react/).
-
+- Learning the MERN stack will help you become a full-stack developer.
+- 
   ## Server setup with Express.js and Node.js
+  
   This demo is designed to highlight the MERN setup. The objective is to develop a simple project with the best possible structure so that you can use it as a boilerplate and elevate your MERN stack projects to meet industry standards.
-- To begin our MERN stack tutorial, we’ll show you how to set up a server with Express.js and Node.js.
+  
+ To begin our MERN stack tutorial, how to set up a server with Express.js and Node.js.
 
 
   # npm package initialization
-- To create a project folder, enter the folder through the terminal, then run $ npm init. It will then ask you some questions about the package name, version, entry point, and more.
-- This will create a file named package.json. Alternatively, you can append a -y flag to the command, which will instruct the CLI to use the default configurations:
+ To create a project folder, enter the folder through the terminal, then run $ npm init. It will then ask you some questions about the package name, version, entry point, and more.
+ 
+ This will create a file named package.json. Alternatively, you can append a -y flag to the command, which will instruct the CLI to use the default configurations:
 `
    npm init -y
   `
@@ -29,15 +31,15 @@ The phrase MERN stack comprises the following technologies that allow for faster
 - express: Is our main framework
 - mongoose: Is used to connect and interact with MongoDB
 
-Now, we’ll add [nodemon](https://nodemon.io/) as a dev dependency. If you don’t want to add this, you can skip it — it’s optional:
+Now, we’ll add [nodemon](https://nodemon.io/) as a dev dependency. 
 `
 npm i -D nodemon
 `
-- To use nodemon, add "app": "nodemon app.js" to your scripts tag under the package.json file.
-- nodemon is a utility that will monitor any changes in your source and [automatically restart your server](https://blog.logrocket.com/nodemon-tutorial-automatically-restart-node-js-apps-with-nodemon/). The app.js is the entry point for the application. It is also important to define a start script here with "start": "node app.js".
+ To use nodemon, add "app": "nodemon app.js" to your scripts tag under the package.json file.
+ nodemon is a utility that will monitor any changes in your source . The app.js is the entry point for the application. It is also important to define a start script here with "start": "node app.js".
   
   # Setting the entry point
-- Now, create a file named app.js for our entry point. You can create this from the terminal with the $ touch app.js command.
+ Now, create a file named app.js for our entry point. You can create this from the terminal with the $ touch app.js command.
   
 
 `
@@ -49,10 +51,10 @@ app.get('/', (req, res) => res.send('Hello world!'));
 app.listen(port, () => console.log(Server running "));
 `
 
-- After that, run the $ node app command. You will see Server running on port 8082. You can also check it from the browser by opening the browser and entering http://localhost:8082.
-- At this point, if we change anything, we’ll need to restart the server manually. But, if we set up nodemon, then we don’t have to restart it every time. nodemon will watch if there is any change and restart the server automatically.
+ After that, run the $ node app command. You will see Server running on port 8082. You can also check it from the browser by opening the browser and entering http://localhost:8082.
+ At this point, if we change anything, we’ll need to restart the server manually. But, if we set up nodemon, then we don’t have to restart it every time. nodemon will watch if there is any change and restart the server automatically.
   
-- So, what you need to do for that is a little change to the scripts in our package.json file. See below:
+ So, what you need to do for that is a little change to the scripts in our package.json file. See below:
   
   `
   // package.json
@@ -89,16 +91,9 @@ app.listen(port, () => console.log(Server running "));
   # Database setup with MongoDB
   
 - MongoDB provides a multi-cloud database service known as Atlas, which simplifies the process of deploying and managing MongoDB databases. We will use Atlas to create the database for our MERN application.
-- To begin, log on to your [MongoDB Atlas dashboard](https://www.mongodb.com/atlas/database) and initiate a new project. Feel free to assign it any name; in our case, we’ll name it MERN\_A\_TO\_Z. Next, create a new database cluster by clicking the create button in the overview tab and selecting the desired plan. We will be using the free plan.
-- After clicking the Create button, the creation process will begin in the background.
-- While the cluster is being created, you will be presented with a security quickstart. This quickstart allows you to create a user and enable access to any network that needs to read and write data to your cluster.
-- Choose Username and Password as your authentication method. Create a user and copy the auto-generated password to a safe place where you can easily access it for later use. Lastly, select My Local Environment and click the Add My IP Address button to include your local development environment and IP address in your database access list.
-- Upon successfully creating the cluster, you will be redirected to the overview page. There, you will see the newly created cluster. Click the Connect button and select the Drivers option under the Connect to your application connection type.
-- In the following step, you will be presented with a connection string that we’ll use to connect the database to our backend. Copy and store the string just as you did with the password earlier.
 
-Although not required for this tutorial, as we are working on a small project, it is important to understand MongoDB’s advanced querying techniques, such as [aggregation pipelines](https://www.mongodb.com/basics/aggregation-pipeline). These pipelines allow us to perform complex manipulations and transformations on data sets directly in the database, providing powerful querying capabilities, including document grouping, filtering, transformation, and the calculation of aggregate values.
 
-Additionally, optimizing the database performance is essential, especially when scaling your application and for large-scale MERN applications, as this improves the performance of your application. MongoDB provides various methods to achieve this, including but not limited to:
+Optimizing the database performance is essential, especially when scaling your application and for large-scale MERN applications, as this improves the performance of your application. MongoDB provides various methods to achieve this, including but not limited to:
 
 - Indexes: Implementing appropriate indexes on frequently queried fields can significantly enhance query performance
 - Sharding: Sharding distributes data across multiple servers, thereby improving scalability
@@ -108,91 +103,59 @@ Additionally, optimizing the database performance is essential, especially when 
 - **Adding the database to our project**
 - Now that we have a database set up, we can go ahead and connect it to our project.
 - Inside the project folder, create another folder named config, and add a db.js
-- // db.js
 
-○
-
-- const mongoose = require("mongoose");
-- const db =
-
-○
-
+  `
+// db.js
+ const mongoose = require("mongoose");
+ const db =
 "mongodb+srv://logrocket:<password>@cluster1.dydb2rf.mongodb.net/?retryWrites=t rue&w=majority";
-
-- /\* Replace <password> with your database password \*/
-
-○
-
-- mongoose.set("strictQuery", true, "useNewUrlParser", true);
-
-○
-
-- const connectDB = async () => {
-- try {
-- await mongoose.connect(db);
-- console.log("MongoDB is Connected...");
-- } catch (err) {
-- console.error(err.message);
-- process.exit(1);
-- }
-- };
-- module.exports = connectDB;
-- You must replace the string in the code above with the one you copied from your database in the previous section, as well as the placeholder with the user password you copied from the dashboard.
-- We need a little change in our app.js file to connect to the database. Update your app.js
-- // app.js
-
-○
-
-- const express = require('express');
-- const connectDB = require('./config/db');
-
-○
-
-- const app = express();
-
-○
-
-- // Connect Database
-- connectDB();
-
-○
-
-- app.get('/', (req, res) => res.send('Hello world!'));
-
-○
-
-- const port = process.env.PORT || 8082;
-
-○
-
-- app.listen(port, () => console.log(`Server running on port ${port}`));
+ /\* Replace <password> with your database password \*/
+mongoose.set("strictQuery", true, "useNewUrlParser", true);
+const connectDB = async () => {
+ try {
+ await mongoose.connect(db);
+ console.log("MongoDB is Connected...");
+  } catch (err) {
+  console.error(err.message);
+ process.exit(1);
+ }
+ };
+  module.exports = connectDB;
+  `
+ You must replace the string in the code above with the one you copied from your database in the previous section, as well as the placeholder with the user password you copied from the dashboard.
+ We need a little change in our app.js file to connect to the database. Update your app.js
+`
+  // app.js
+ const express = require('express');
+ const connectDB = require('./config/db');
+ const app = express();
+`
+`
+// Connect Database
+connectDB();
+app.get('/', (req, res) => res.send('Hello world!'));
+const port = process.env.PORT || 8082;
+app.listen(port, () => console.log(`Server running on port ${port}`));
+`
 - Now, you can run the project using the $ npm run app command.
-- Great! So far, we are on the right track, and our database is successfully connected. Now, time to complete the route setup, and after that, we will see how to create [RESTful APIs](https://blog.logrocket.com/the-essential-guide-for-designing-a-production-ready-developer-friendly-restful-api/).
-- **Building RESTful APIs with the MERN stack**
-- To get started, create a folder named routes. In it, create another folder named api, which will hold all our APIs. Inside the api folder, create a file named books.js. We will create some APIs here to show how it works in a moment.
-- Now, update your books.js with the following code:
-- // routes/api/books.js
-
-○
-
-- const express = require('express');
-- const router = express.Router();
-
-○
-
-- // Load Book model
-- const Book = require('../../models/Books');
-
-○
-
-- // @route GET api/books/test
-- // @desc Tests books route
-- // @access Public
-- router.get('/test', (req, res) => res.send('book route testing!'));
-
-○
-
-- // @route GET api/books
+- Great! So far, we are on the right track, and our database is successfully connected. Now, time to complete the route setup.
+- 
+  ## Building RESTful APIs with the MERN stack
+  
+ To get started, create a folder named routes. In it, create another folder named api, which will hold all our APIs. Inside the api folder, create a file named books.js. We will create some APIs here to show how it works in a moment.
+ 
+ Now, update your books.js with the following code:
+ `
+ // routes/api/books.js
+const express = require('express');
+ const router = express.Router();
+// Load Book model
+ const Book = require('../../models/Books');
+ // @route GET api/books/test
+ // @desc Tests books route
+ // @access Public
+ router.get('/test', (req, res) => res.send('book route testing!'));
+// @route GET api/books
 - // @desc Get all books
 - // @access Public
 - router.get('/', (req, res) => {
@@ -200,10 +163,7 @@ Additionally, optimizing the database performance is essential, especially when 
 - .then(books => res.json(books))
 - .catch(err => res.status(404).json({ nobooksfound: 'No Books found' }));
 - });
-
-○
-
-- // @route GET api/books/:id
+ // @route GET api/books/:id
 - // @desc Get single book by id
 - // @access Public
 - router.get('/:id', (req, res) => {
@@ -212,7 +172,7 @@ Additionally, optimizing the database performance is essential, especially when 
 - .catch(err => res.status(404).json({ nobookfound: 'No Book found' }));
 - });
 
-○
+
 
 - // @route POST api/books
 - // @desc Add/save book
