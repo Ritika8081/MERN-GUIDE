@@ -22,9 +22,9 @@ The phrase MERN stack comprises the following technologies that allow for faster
  To create a project folder, enter the folder through the terminal, then run $ npm init. It will then ask you some questions about the package name, version, entry point, and more.
  
  This will create a file named package.json. Alternatively, you can append a -y flag to the command, which will instruct the CLI to use the default configurations:
-`
+```
    npm init -y
-  `
+  ```
   # Installing the dependencies
 - Next, we’ll add some dependencies with $ npm i express mongoose body-parser .
 - body-parser: Allows us to get the data throughout the request
