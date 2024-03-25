@@ -7,10 +7,10 @@
 - Node.js :- JavaScript-Code-On-The-Server-Side (backend)
 #### Prerequisites :
 Following installation -
--> Node.js and npm
--> MongoDB(locally /cloud-based solution like MongoDB Atlas)
--> Code editor (eg - VS Code)
--> Git (optional but recommended)
+- Node.js and npm
+- MongoDB(locally /cloud-based solution like MongoDB Atlas)
+- Code editor (eg - VS Code)
+- Git (optional but recommended)
 
 >Every website has 3 pillars -
 >Frontend
@@ -29,10 +29,10 @@ npm init -y
 ```
 npm i express mongoose body-parser cors
 ```
->express - For building the RESTfull API.
-mongoose - MongoDB object modeling tool designed to work in an asynchronous environment.
-body-parser - To parse incoming request bodies.
-cors: Middleware for enabling Cross-Origin Resource Sharing.
+> - express - For building the RESTfull API.
+> - mongoose - MongoDB object modeling tool designed to work in an asynchronous environment.
+> - body-parser - To parse incoming request bodies.
+> - cors: Middleware for enabling Cross-Origin Resource Sharing.
 
 ### 1.3: Create Express server
 - Create a file server.js :
@@ -287,7 +287,7 @@ app.use('/api/auth', require('./routes/auth'));
 module.exports = app;
 ```
 # ---- Additional Features ----
-e] Pagination
+### e] Pagination
 - Implement pagination for listing items (e.g., paginating through a list of products).
 
 ### Pagination (backend/routes/products.js)
@@ -321,5 +321,5 @@ router.post('/upload', upload.single('file'), (req, res) => {
 });
 ```
 
-## Conclusion2
+## Conclusion 2
 >By incorporating authentication, authorization, validation, error handling, and additional >features into your MERN application, you can create a robust and secure web application that >meets the needs of your users. Remember to continuously iterate on your application, gather >feedback, and make improvements based on user requirements and best practices.
